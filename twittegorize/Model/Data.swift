@@ -14,7 +14,7 @@ let tweetData: [Tweet] = load()
 
 func load() -> [Tweet] {
     // ダミーデータの生成
-    let user = User(id: "1", screenName: "ktanaka117", name: "ダンボー田中", profileImageURL: "https://pbs.twimg.com/profile_images/832034247414206464/PCKoQRPD.jpg")
+    let user = User(id: "1", screenName: "Tirol_JPN", name: "こうすけ", profileImageURL: "https://pbs.twimg.com/profile_images/1122848644225355777/3T_eJG72_400x400.jpg")
     let tweet = Tweet(id: "01", text: "Twitterクライアント作成なう", user: user)
     let tweets = [tweet]
     return tweets

@@ -26,7 +26,7 @@ struct TweetList: View {
                     TweetRow(tweet: tweet)
                 }
             }
-            .navigationBarTitle(Text("Tweet List"))
+            .navigationBarTitle(Text("Favorited Tweet List"))
         }
     }
 }
