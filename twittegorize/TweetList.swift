@@ -23,6 +23,7 @@ struct TweetList: View {
 //                    ) {
 //                        LandmarkRow(landmark: landmark)
 //                    }
+                    
                     TweetRow(tweet: tweet)
                 }
             }
@@ -34,5 +35,6 @@ struct TweetList: View {
 struct TweetList_Previews: PreviewProvider {
     static var previews: some View {
         TweetList()
+        .environmentObject(UserData())
     }
 }
