@@ -12,8 +12,11 @@ struct TweetDetail: View {
     var tweet: Tweet
     
     var body: some View {
-        Text(tweet.text)
-    }
+            VStack{
+                Text("Choose your category to save")
+                Text(tweet.text)
+            }
+        }
 }
 
 struct TweetDetail_Previews: PreviewProvider {
