@@ -15,9 +15,14 @@ let tweetData: [Tweet] = load()
 func load() -> [Tweet] {
     // ダミーデータの生成
     let user = User(id: "1", screenName: "Tirol_JPN", name: "こうすけ", profileImageURL: "https://pbs.twimg.com/profile_images/1122848644225355777/3T_eJG72_400x400.jpg")
-    let tweet = Tweet(id: "01", text: "Twitterクライアント作成なう", user: user)
-    let tmp = Tweet(id: "02", text: "テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト", user: user)
-    let tweets = [tweet, tweet, tweet, tweet, tweet, tweet, tweet, tweet, tweet, tweet, tweet, tweet, tweet, tmp]
+    
+    var tweets = [Tweet]()
+    
+    for i in 0..<100 {
+        tweets.append(
+            Tweet(id: String(i), text: "テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト", user: user)
+        )
+    }
     return tweets
 }
 

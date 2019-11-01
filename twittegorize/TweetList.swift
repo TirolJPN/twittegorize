@@ -15,16 +15,13 @@ struct TweetList: View {
     var body: some View {
         NavigationView {
             List {
-                
                 ForEach(userData.tweets) { tweet in
-//                    NavigationLink(
-//                        destination: LandmarkDetail(landmark: landmark)
-//                            .environmentObject(self.userData)
-//                    ) {
-//                        LandmarkRow(landmark: landmark)
-//                    }
-                    
-                    TweetRow(tweet: tweet)
+                    NavigationLink(
+                        destination: TweetDetail(tweet: tweet)
+                            .environmentObject(self.userData)
+                    ) {
+                        TweetRow(tweet: tweet)
+                    }
                 }
             }
             .navigationBarTitle(Text("Favorited Tweet List"))
