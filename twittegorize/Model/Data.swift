@@ -16,10 +16,10 @@ func load() -> [Tweet] {
     // ダミーデータの生成
     let user = User(id: "1", screenName: "Tirol_JPN", name: "こうすけ", profileImageURL: "https://pbs.twimg.com/profile_images/1122848644225355777/3T_eJG72_400x400.jpg")
     let tweet = Tweet(id: "01", text: "Twitterクライアント作成なう", user: user)
-    let tweets = [tweet]
+    let tmp = Tweet(id: "02", text: "テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト", user: user)
+    let tweets = [tweet, tweet, tweet, tweet, tweet, tweet, tweet, tweet, tweet, tweet, tweet, tweet, tweet, tmp]
     return tweets
 }
-
 
 /*
 let tweetData: [Tweet] = load("tweetsData.json")
