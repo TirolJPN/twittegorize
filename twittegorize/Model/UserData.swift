@@ -11,4 +11,5 @@ import SwiftUI
 
 final class UserData: ObservableObject {
     @Published var tweets = tweetData
+    @Published var categories = categoryData
 }
