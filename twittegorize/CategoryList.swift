@@ -15,10 +15,15 @@ struct CategoryList: View {
         NavigationView {
             List {
                 ForEach(userData.categories) { category in
-                    Text(verbatim: category.title)
+                    NavigationLink (
+                        destination: CategoryDetail(category: category)
+                            .environmentObject(self.userData)
+                    ) {
+                        CategoryRow(category: category)
+                    }
                 }
             }
-            .navigationBarTitle(Text("Favorited Tweet List"))
+            .navigationBarTitle(Text("Category List"))
         }
     }
 }
@@ -26,5 +31,6 @@ struct CategoryList: View {
 struct CategoryList_Previews: PreviewProvider {
     static var previews: some View {
         CategoryList()
+            .environmentObject(UserData())
     }
 }
