@@ -7,7 +7,7 @@
 //
 
 let tweetData: [Tweet] = tweetLoad()
-//let categoryData: [Category]
+let categoryData: [Category] = categoryLoad()
 
 func tweetLoad() -> [Tweet] {
     let user = User(id: "1", screenName: "Tirol_JPN", name: "こうすけ", profileImageURL: "https://pbs.twimg.com/profile_images/1122848644225355777/3T_eJG72_400x400.jpg")
@@ -22,7 +22,7 @@ func tweetLoad() -> [Tweet] {
     return tweets
 }
 
-func categoryData() -> [Category] {
+func categoryLoad() -> [Category] {
     let categories = [
         Category(id: "0", title: "名言", description: "後で見返したい名言集"),
         Category(id: "1", title: "おもしろ", description: "面白いツイート集"),

@@ -15,7 +15,7 @@ struct Content: View {
                 .tabItem {
                     Text("Tweet List")
                 }
-            Text("Category")
+            CategoryList()
                 .tabItem {
                     Text("Category")
                 }
