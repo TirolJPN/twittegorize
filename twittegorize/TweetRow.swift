@@ -30,7 +30,6 @@ struct TweetRow: View {
                         .bold()
                     Text(verbatim: "@" + tweet.user.screenName)
                 }
-                Spacer()
                 Text(verbatim: tweet.text)
             }
         }
@@ -40,6 +39,5 @@ struct TweetRow: View {
 struct TweetRow_Previews: PreviewProvider {
     static var previews: some View {
         TweetRow(tweet: tweetData[0])
-        .previewLayout(.fixed(width: 400, height: 70))
     }
 }

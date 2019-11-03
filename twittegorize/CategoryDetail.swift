@@ -9,18 +9,17 @@
 import SwiftUI
 
 struct CategoryDetail: View {
-    var category: Category
+    var tweets: [Tweet]
     
     var body: some View {
-        HStack {
-            Text(category.title)
-            Text(category.description)
+        List {
+            ForEach(tweets) { tweet in
+                VStack{
+                    Text(verbatim: tweet.categoryId)
+                    Text(verbatim: tweet.text)
+                }
+            }
         }
-    }
-}
-
-struct CategoryDetail_Previews: PreviewProvider {
-    static var previews: some View {
-        CategoryDetail(category: categoryData[0])
+        .navigationBarTitle(Text("hoge"))
     }
 }

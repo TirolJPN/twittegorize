@@ -14,4 +14,6 @@ struct Tweet: Identifiable {
     let text: String
     
     let user: User
+    
+    let categoryId: String
 }

@@ -7,16 +7,36 @@
 //
 
 import SwiftUI
+import URLImage
 
 struct TweetDetail: View {
     var tweet: Tweet
     
     var body: some View {
-            VStack{
-                Text("Choose your category to save")
-                Text(tweet.text)
+        VStack(alignment: .leading) {
+            HStack {
+                URLImage(URL(string: tweet.user.profileImageURL)!,
+                    delay: 0.25,
+                    processors: [ Resize(size: CGSize(width: 50.0, height: 50.0), scale: UIScreen.main.scale) ],
+                    content:  {
+                        $0.image
+                        .resizable()
+                        .aspectRatio(contentMode: .fill)
+                        .clipped()
+                    })
+                        .frame(width: 50.0, height: 50.0)
+                VStack(alignment: .leading){
+                    HStack{
+                        Text(verbatim: tweet.user.name)
+                            .bold()
+                        Text(verbatim: "@" + tweet.user.screenName)
+                    }
+                    Text(verbatim: tweet.text)
+                }
             }
+            Spacer()
         }
+    }
 }
 
 struct TweetDetail_Previews: PreviewProvider {

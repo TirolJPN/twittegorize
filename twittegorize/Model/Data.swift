@@ -16,7 +16,7 @@ func tweetLoad() -> [Tweet] {
     
     for i in 0..<100 {
         tweets.append(
-            Tweet(id: String(i), text: "テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト", user: user)
+            Tweet(id: String(i), text: "テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト", user: user, categoryId: String(i % 3))
         )
     }
     return tweets
