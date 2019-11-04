@@ -20,10 +20,10 @@ struct CategoryList: View {
                             .environmentObject(self.userData)
                     ) {
                         CategoryRow(category: category)
-//                            .onMove()
                     }
                 }
                 .onDelete(perform: deletePlace)
+                .onMove(perform: movePlace)
             }
             .navigationBarItems(trailing: EditButton())
             .navigationBarTitle(Text("Category List"))
@@ -34,6 +34,10 @@ struct CategoryList: View {
         if let offset = offset.last {
             self.userData.categories.remove(at: offset)
         }
+    }
+    
+    func movePlace(from source: IndexSet, to destionation: Int) {
+        print(source, destionation)
     }
 }
 
