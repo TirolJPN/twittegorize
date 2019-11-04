@@ -8,9 +8,11 @@
 
 import SwiftUI
 import URLImage
+import Combine
 
 struct TweetDetail: View {
     var tweet: Tweet
+    @EnvironmentObject private var userData: UserData
     
     var body: some View {
         VStack(alignment: .leading) {
@@ -34,9 +36,20 @@ struct TweetDetail: View {
                     Text(verbatim: tweet.text)
                 }
             }
-            Spacer()
+            Picker(selection: /*@START_MENU_TOKEN@*/.constant(1)/*@END_MENU_TOKEN@*/, label: Text("選択するカテゴリ")) {
+                ForEach(userData.categories) { category in
+                    Text(category.title).tag(Int(category.id))
+                }
+            }
+            .onTapGesture {
+//                print(1)
+//                self.userData.tweets[self.userData.tweets.index(where: {$0.categoryId == tweet.id} )] = "1"
+                self.userData.tweets[self.userData.tweets.first(where: {$0.id == tweet.id} )].categoryId = "1"
+            }
+//            Spacer()
         }
     }
+    
 }
 
 struct TweetDetail_Previews: PreviewProvider {

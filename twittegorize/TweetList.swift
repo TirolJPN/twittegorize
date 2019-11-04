@@ -20,6 +20,7 @@ struct TweetList: View {
                             .environmentObject(self.userData)
                     ) {
                         TweetRow(tweet: tweet)
+                            .environmentObject(self.userData)
                     }
                 }
             }
