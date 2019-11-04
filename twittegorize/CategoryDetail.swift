@@ -10,16 +10,14 @@ import SwiftUI
 
 struct CategoryDetail: View {
     var tweets: [Tweet]
+    var categoryTitle: String
     
     var body: some View {
         List {
             ForEach(tweets) { tweet in
-                VStack{
-                    Text(verbatim: tweet.categoryId)
-                    Text(verbatim: tweet.text)
-                }
+                TweetRow(tweet: tweet)
             }
         }
-        .navigationBarTitle(Text("hoge"))
+        .navigationBarTitle(Text(categoryTitle))
     }
 }

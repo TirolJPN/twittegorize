@@ -16,7 +16,7 @@ struct CategoryList: View {
             List {
                 ForEach(userData.categories) { category in
                     NavigationLink (
-                        destination: CategoryDetail(tweets:  self.userData.tweets.filter{ $0.categoryId == category.id })
+                        destination: CategoryDetail(tweets:  self.userData.tweets.filter{ $0.categoryId == category.id }, categoryTitle: category.title)
                             .environmentObject(self.userData)
                     ) {
                         CategoryRow(category: category)
