@@ -45,7 +45,7 @@ class LoginButtonController : UIViewController {
         let AuthButton = UIButton(type: UIButton.ButtonType.system)
         AuthButton.addTarget(self, action: #selector(buttonEvent(_:)), for: UIControl.Event.touchUpInside)
         // ラベルを設定する
-        AuthButton.setTitle("ボタンのテキスト", for: UIControl.State.normal)
+        AuthButton.setTitle("ろぐいんしませんか〜〜〜〜〜〜〜〜〜", for: UIControl.State.normal)
 
         // サイズを決める(自動調整)
         AuthButton.sizeToFit()
