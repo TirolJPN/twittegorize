@@ -22,5 +22,5 @@ target 'twittegorize' do
   # https://firebase.google.com/docs/ios/setup#available-pods
   
   pod 'FirebaseUI/OAuth'
-#  pod 'Firebase/Auth'
+  pod 'Firebase/Auth'
 end

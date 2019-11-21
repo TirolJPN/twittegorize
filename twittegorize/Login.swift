@@ -15,7 +15,6 @@ import FirebaseUI
 
 struct Login: View {
     var body: some View {
-        // No user is signed in.
         LoginButtonControllerWrapper()
     }
 }
@@ -29,141 +28,59 @@ struct LoginButtonControllerWrapper: UIViewControllerRepresentable {
     
     
     func updateUIViewController(_ uiViewController: LoginButtonControllerWrapper.UIViewControllerType, context: UIViewControllerRepresentableContext<LoginButtonControllerWrapper>) {
-        //
     }
 
 }
-/*
-class LoginButtonController: UIViewController {
+
+class LoginButtonController : UIViewController {
+    var twitterProvider : OAuthProvider?
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("hoge1")
-        let logInButton = TWTRLogInButton(logInCompletion:
-        { session, error in
-            if let session = session {
-                print("hoge2")
-                let authToken = session.authToken
-                let authTokenSecret = session.authTokenSecret
-                let credential = TwitterAuthProvider.credential(withToken: session.authToken, secret: session.authTokenSecret)
+        
+        // Do any additional setup after loading the view, typically from a nib.
 
-                Auth.auth().signIn(with: credential) { (authResult, error) in
-                    if let error = error { return }
-                    //Sign In Completed
-                    print("hoge3")
-                }
-            }
-        })
-        logInButton.center = self.view.center
-        self.view.addSubview(logInButton)
-    }
-}
- */
+        self.twitterProvider = OAuthProvider(providerID:"twitter.com");
+        
+        let AuthButton = UIButton(type: UIButton.ButtonType.system)
+        AuthButton.addTarget(self, action: #selector(buttonEvent(_:)), for: UIControl.Event.touchUpInside)
+        // ラベルを設定する
+        AuthButton.setTitle("ボタンのテキスト", for: UIControl.State.normal)
 
-class LoginButtonController : UIViewController, FUIAuthDelegate {
-    let authUI: FUIAuth = FUIAuth.defaultAuthUI()!
-    // 認証に使用するプロバイダの選択
-    lazy var providers: [FUIAuthProvider] = [
-        twitterAuthProvider()!,
-    ]
+        // サイズを決める(自動調整)
+        AuthButton.sizeToFit()
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // authUIのデリゲート
-        var AuthButton = UIButton()
-        self.authUI.delegate = self
-        self.authUI.providers = providers
+        // 位置を決める(画面中央)
         AuthButton.center = self.view.center
         self.view.addSubview(AuthButton)
     }
     
-    func twitterAuthProvider() -> FUIAuthProvider? {
-        let buttonColor = UIColor(red: 71.0/255.0, green: 154.0/255.0, blue: 234.0/255.0, alpha: 1.0)
-        return FUIOAuth(authUI: self.authUI,
-                      providerID: "twitter.com",
-                      buttonLabelText: "Sign in with Twitter",
-                      shortName: "Twitter",
-                      buttonColor: buttonColor,
-                      scopes: ["user.readwrite"],
-                      customParameters: ["prompt" : "consent"],
-                      loginHintKey: nil)
-    }
-
-    //　認証画面から離れたときに呼ばれる（キャンセルボタン押下含む）
-    public func authUI(_ authUI: FUIAuth, didSignInWith user: User?, error: Error?){
-        // 認証に成功した場合
-        if error == nil {
-            self.performSegue(withIdentifier: "toTopView", sender: self)
+    @objc func buttonEvent(_ sender: UIButton) {
+        print("ボタンの情報: \(sender)")
+        
+        self.twitterProvider?.getCredentialWith(_: nil){ (credential, error) in
+            print("phase 1")
+            if error != nil {
+                // Handle error.
             }
-        // エラー時の処理をここに書く
-    }
-    //    @objc func AuthButtonTapped(sender : AnyObject) {
-    //        // FirebaseUIのViewの取得
-    //        let authViewController = self.authUI.authViewController()
-    //        // FirebaseUIのViewの表示
-    ////        self.present(authViewController, animated: true, completion: nil)
-    //    }
-}
-
-/*
-struct hoge: UIViewRepresentable {
-    func makeUIView(context: Context) -> UIView {
-        /*
-        print("hoge1")
-        let view: UIView = UIView()
-        let logInButton = TWTRLogInButton(logInCompletion: { session, error in
-            if let session = session {
-                print("hoge2")
-                let authToken = session.authToken
-                let authTokenSecret = session.authTokenSecret
-                let credential = TwitterAuthProvider.credential(withToken: session.authToken, secret: session.authTokenSecret)
-                print("hoge3")
-                Auth.auth().signIn(with: credential) { (authResult, error) in
-                    if let error = error { return }
-                    //Sign In Completed
-
+            if let credential = credential {
+                print("phase 2")
+                Auth.auth().signInAndRetrieveData(with: credential) { (authResult, error) in
+                    if error != nil {
+                        // Handle error.
+                    }
+                    print("phase 3")
+                    // User is signed in.
+                    // IdP data available in authResult.additionalUserInfo.profile.
+                    // Twitter OAuth access token can also be retrieved by:
+                    // authResult.credential.accessToken
+                    // Twitter OAuth ID token can be retrieved by calling:
+                    // authResult.credential.idToken
+                    // Twitter OAuth secret can be retrieved by calling:
+                    // authResult.credential.secret
+                    
                 }
             }
-        })
-        view.addSubview(logInButton)
-        return view
-        */
-        
-        // すでにログイン済みか
-        
-        let view: UIView = UIView()
-        if !hasAlreadyTwitterAuth() {
-            print("login phase")
-            let logInButton = TWTRLogInButton { (session, error) in
-               if let unwrappedSession = session {
-                   let alert = UIAlertController(title: "Logged In",
-                                                 message: "User \(unwrappedSession.userName) has logged in",
-                       preferredStyle: UIAlertController.Style.alert
-                   )
-                   alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
-                   
-               } else {
-                   NSLog("Login error: %@", error!.localizedDescription);
-               }
-            }
-            view.addSubview(logInButton)
-
-        } else {
-           // 既にログインしていればtimelineへ
-           print("already logined")
         }
-        return view
-    }
-
-    func updateUIView(_ uiView: UIView, context: Context) {
-        //
-    }
-    
-    func hasAlreadyTwitterAuth() -> Bool {
-        if TWTRTwitter.sharedInstance().sessionStore.hasLoggedInUsers() {
-            return true
-        }
-        return false
     }
 }
-*/
