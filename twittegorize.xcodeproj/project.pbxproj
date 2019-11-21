@@ -22,6 +22,8 @@
 		2179313F236EF6B9006123FE /* CategoryDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2179313E236EF6B9006123FE /* CategoryDetail.swift */; };
 		21793141236EF9A7006123FE /* CategoryRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21793140236EF9A7006123FE /* CategoryRow.swift */; };
 		217CBD87237557BE004FDBE7 /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 217CBD86237557BE004FDBE7 /* Login.swift */; };
+		21C33065238645C40051226C /* .env in Resources */ = {isa = PBXBuildFile; fileRef = 21C33064238645C40051226C /* .env */; };
+		21C33067238645E30051226C /* .env.sample in Resources */ = {isa = PBXBuildFile; fileRef = 21C33066238645E30051226C /* .env.sample */; };
 		21CFAA86235522C4001EB758 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21CFAA85235522C4001EB758 /* AppDelegate.swift */; };
 		21CFAA88235522C4001EB758 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21CFAA87235522C4001EB758 /* SceneDelegate.swift */; };
 		21CFAA8A235522C4001EB758 /* TweetList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21CFAA89235522C4001EB758 /* TweetList.swift */; };
@@ -65,6 +67,8 @@
 		2179313E236EF6B9006123FE /* CategoryDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryDetail.swift; sourceTree = "<group>"; };
 		21793140236EF9A7006123FE /* CategoryRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryRow.swift; sourceTree = "<group>"; };
 		217CBD86237557BE004FDBE7 /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
+		21C33064238645C40051226C /* .env */ = {isa = PBXFileReference; lastKnownFileType = text; path = .env; sourceTree = "<group>"; };
+		21C33066238645E30051226C /* .env.sample */ = {isa = PBXFileReference; lastKnownFileType = text; path = .env.sample; sourceTree = "<group>"; };
 		21CFAA82235522C4001EB758 /* twittegorize.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = twittegorize.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		21CFAA85235522C4001EB758 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		21CFAA87235522C4001EB758 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -176,6 +180,8 @@
 				21CFAA8B235522CA001EB758 /* Assets.xcassets */,
 				21CFAA93235522CA001EB758 /* Info.plist */,
 				2148DF6D2379B30F00738580 /* GoogleService-Info.plist */,
+				21C33066238645E30051226C /* .env.sample */,
+				21C33064238645C40051226C /* .env */,
 				21CFAA8D235522CA001EB758 /* Preview Content */,
 			);
 			path = twittegorize;
@@ -240,8 +246,10 @@
 				BBC6F4B282F9C7375A09F7F7 /* [CP] Check Pods Manifest.lock */,
 				21CFAA7E235522C4001EB758 /* Sources */,
 				21CFAA7F235522C4001EB758 /* Frameworks */,
+				21C33068238647FE0051226C /* ShellScript */,
 				21CFAA80235522C4001EB758 /* Resources */,
 				DC5E57E0C8B3FA2573129D43 /* [CP] Embed Pods Frameworks */,
+				B09DF6DB82393592A768F6A1 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -283,6 +291,7 @@
 				21CFAAA0235522CA001EB758 /* Frameworks */,
 				21CFAAA1235522CA001EB758 /* Resources */,
 				255011D8CAC4AB5F64982A5D /* [CP] Embed Pods Frameworks */,
+				68898ACDD0EBDC7046011C1A /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -348,6 +357,8 @@
 				21CFAA8F235522CA001EB758 /* Preview Assets.xcassets in Resources */,
 				21CFAA8C235522CA001EB758 /* Assets.xcassets in Resources */,
 				2148DF6E2379B30F00738580 /* GoogleService-Info.plist in Resources */,
+				21C33067238645E30051226C /* .env.sample in Resources */,
+				21C33065238645C40051226C /* .env in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -368,6 +379,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		21C33068238647FE0051226C /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nplistBuddy=\"/usr/libexec/PlistBuddy\"\ninfoPlistFileSource=\"${SRCROOT}/${INFOPLIST_FILE}\"\ninfoPlistFileDestination=\"${TEMP_DIR}/Preprocessed-Info.plist\"\n\n. /path/to/.env\n\n$plistBuddy -c \"Set :CFBundleURLTypes:0:CFBundleURLSchemes:0 twitterkit-${TWITTER_CONSUMER_KEY}\" \"${infoPlistFileDestination}\"\n";
+		};
 		255011D8CAC4AB5F64982A5D /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -405,6 +433,40 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		68898ACDD0EBDC7046011C1A /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-twittegorize-twittegorizeUITests/Pods-twittegorize-twittegorizeUITests-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-twittegorize-twittegorizeUITests/Pods-twittegorize-twittegorizeUITests-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-twittegorize-twittegorizeUITests/Pods-twittegorize-twittegorizeUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B09DF6DB82393592A768F6A1 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-twittegorize/Pods-twittegorize-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-twittegorize/Pods-twittegorize-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-twittegorize/Pods-twittegorize-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		BBC6F4B282F9C7375A09F7F7 /* [CP] Check Pods Manifest.lock */ = {

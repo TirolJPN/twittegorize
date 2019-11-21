@@ -8,18 +8,45 @@
 
 import UIKit
 import Firebase
+import FirebaseAuth
+import FirebaseUI
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
-
+    override init() {
+        super.init()
+        // Firebase関連の機能を使う前に必要
+        FirebaseApp.configure()
+    }
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        FirebaseApp.configure()
+        guard let path = Bundle.main.path(forResource: ".env", ofType: nil) else {
+            fatalError("Not found: '/path/to/.env'.\nPlease create .env file reference from .env.sample")
+        }
+        let url = URL(fileURLWithPath: path)
+        do {
+            let data = try Data(contentsOf: url)
+            let str = String(data: data, encoding: .utf8) ?? "Empty File"
+            let clean = str.replacingOccurrences(of: "\"", with: "").replacingOccurrences(of: "'", with: "")
+            let envVars = clean.components(separatedBy:"\n")
+            for envVar in envVars {
+                let keyVal = envVar.components(separatedBy:"=")
+                if keyVal.count == 2 {
+                    setenv(keyVal[0], keyVal[1], 1)
+                }
+            }
+        } catch {
+            fatalError(error.localizedDescription)
+        }
         return true
     }
 
+    
+    func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
+        return false
+        
+    }
     // MARK: UISceneSession Lifecycle
 
     func application(_ application: UIApplication, configurationForConnecting connectingSceneSession: UISceneSession, options: UIScene.ConnectionOptions) -> UISceneConfiguration {
