@@ -42,9 +42,9 @@ struct TweetDetail: View {
                 }
             }
             .onTapGesture {
-//                print(1)
+                print(1)
 //                self.userData.tweets[self.userData.tweets.index(where: {$0.categoryId == tweet.id} )] = "1"
-                self.userData.tweets[self.userData.tweets.first(where: {$0.id == tweet.id} )].categoryId = "1"
+//                self.userData.tweets[self.userData.tweets.first(where: {$0.id == tweet.id} )].categoryId = "1"
             }
 //            Spacer()
         }
