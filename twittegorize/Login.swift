@@ -14,8 +14,14 @@ import FirebaseUI
 
 
 struct Login: View {
+    let backGroundColor = LinearGradient(gradient: Gradient(colors: [Color.white, Color(red: 0.4, green: 0.4, blue: 1.0)]),
+                                         startPoint: .top, endPoint: .bottom)
+    
     var body: some View {
-        LoginButtonControllerWrapper()
+        ZStack {
+            backGroundColor.edgesIgnoringSafeArea(.all)
+            LoginButtonControllerWrapper()
+        }
     }
 }
 
@@ -39,19 +45,18 @@ class LoginButtonController : UIViewController {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view, typically from a nib.
-
         self.twitterProvider = OAuthProvider(providerID:"twitter.com");
         
         let AuthButton = UIButton(type: UIButton.ButtonType.system)
         AuthButton.addTarget(self, action: #selector(buttonEvent(_:)), for: UIControl.Event.touchUpInside)
-        // ラベルを設定する
-        AuthButton.setTitle("ろぐいんしませんか〜〜〜〜〜〜〜〜〜", for: UIControl.State.normal)
-
-        // サイズを決める(自動調整)
-        AuthButton.sizeToFit()
-
-        // 位置を決める(画面中央)
+        AuthButton.setTitle("Sign in with Twitter", for: UIControl.State.normal)
+        AuthButton.backgroundColor = UIColor(red: 0.0, green: (172/255), blue: (237/255), alpha: 1)
+        AuthButton.frame = CGRect(x: 10, y: 10, width: 300, height: 50)
         AuthButton.center = self.view.center
+        AuthButton.setTitleColor(UIColor.white, for: .normal)
+        AuthButton.setTitleShadowColor(UIColor.black, for: UIControl.State.normal)
+        AuthButton.titleLabel?.adjustsFontSizeToFitWidth = true
+        
         self.view.addSubview(AuthButton)
     }
     
