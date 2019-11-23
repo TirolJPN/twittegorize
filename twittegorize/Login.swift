@@ -14,7 +14,7 @@ import FirebaseUI
 
 
 struct Login: View {
-    let backGroundColor = LinearGradient(gradient: Gradient(colors: [Color.white, Color(red: 0.4, green: 0.4, blue: 1.0)]),
+    let backGroundColor = LinearGradient(gradient: Gradient(colors: [Color.white, Color(red: 0.6, green: 0.6, blue: 1.0)]),
                                          startPoint: .top, endPoint: .bottom)
     
     var body: some View {
@@ -61,20 +61,18 @@ class LoginButtonController : UIViewController {
     }
     
     @objc func buttonEvent(_ sender: UIButton) {
-        print("ボタンの情報: \(sender)")
-        
+        print("info about button : \(sender)")
         self.twitterProvider?.getCredentialWith(_: nil){ (credential, error) in
-            print("phase 1")
+            print("start to sign in")
             if error != nil {
                 // Handle error.
             }
             if let credential = credential {
-                print("phase 2")
                 Auth.auth().signInAndRetrieveData(with: credential) { (authResult, error) in
                     if error != nil {
                         // Handle error.
+                        print("fail to sign in")
                     }
-                    print("phase 3")
                     // User is signed in.
                     // IdP data available in authResult.additionalUserInfo.profile.
                     // Twitter OAuth access token can also be retrieved by:
@@ -83,7 +81,9 @@ class LoginButtonController : UIViewController {
                     // authResult.credential.idToken
                     // Twitter OAuth secret can be retrieved by calling:
                     // authResult.credential.secret
-                    
+                    let vc = UIHostingController(rootView: Content().environmentObject(UserData()))
+                    vc.modalPresentationStyle = .fullScreen
+                    self.present(vc, animated: true)
                 }
             }
         }
