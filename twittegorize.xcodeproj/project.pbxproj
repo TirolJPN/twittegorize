@@ -120,11 +120,7 @@
 		212CF6D1235C9F400064217E /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				212CF6D2235CA0070064217E /* User.swift */,
-				212CF6D4235DA6F30064217E /* Tweet.swift */,
-				2156AD9A236C097B00A59040 /* Category.swift */,
-				2144C60D23691CDD00DC2397 /* Data.swift */,
-				2144C6112369588100DC2397 /* UserData.swift */,
+				21C33070238A632D0051226C /* Dummy */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -134,6 +130,57 @@
 			children = (
 			);
 			path = Assets;
+			sourceTree = "<group>";
+		};
+		21C33070238A632D0051226C /* Dummy */ = {
+			isa = PBXGroup;
+			children = (
+				212CF6D2235CA0070064217E /* User.swift */,
+				212CF6D4235DA6F30064217E /* Tweet.swift */,
+				2156AD9A236C097B00A59040 /* Category.swift */,
+				2144C60D23691CDD00DC2397 /* Data.swift */,
+				2144C6112369588100DC2397 /* UserData.swift */,
+			);
+			path = Dummy;
+			sourceTree = "<group>";
+		};
+		21C33071238A634B0051226C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				21C33074238A63DF0051226C /* Root */,
+				21C33073238A63D20051226C /* Category */,
+				21C33072238A63B50051226C /* Tweet */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		21C33072238A63B50051226C /* Tweet */ = {
+			isa = PBXGroup;
+			children = (
+				21CFAA89235522C4001EB758 /* TweetList.swift */,
+				2144C60F23692C3300DC2397 /* TweetRow.swift */,
+				2156AD98236C043C00A59040 /* TweetDetail.swift */,
+			);
+			path = Tweet;
+			sourceTree = "<group>";
+		};
+		21C33073238A63D20051226C /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				2179313C236EF215006123FE /* CategoryList.swift */,
+				21793140236EF9A7006123FE /* CategoryRow.swift */,
+				2179313E236EF6B9006123FE /* CategoryDetail.swift */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		21C33074238A63DF0051226C /* Root */ = {
+			isa = PBXGroup;
+			children = (
+				217CBD86237557BE004FDBE7 /* Login.swift */,
+				2156AD9C236C0B9C00A59040 /* Content.swift */,
+			);
+			path = Root;
 			sourceTree = "<group>";
 		};
 		21CFAA79235522C4001EB758 = {
@@ -163,16 +210,9 @@
 			children = (
 				2144C60A23691C3700DC2397 /* Assets */,
 				212CF6D1235C9F400064217E /* Model */,
+				21C33071238A634B0051226C /* View */,
 				21CFAA85235522C4001EB758 /* AppDelegate.swift */,
 				21C3306D238666B60051226C /* SceneDelegate.swift */,
-				217CBD86237557BE004FDBE7 /* Login.swift */,
-				2156AD9C236C0B9C00A59040 /* Content.swift */,
-				2179313C236EF215006123FE /* CategoryList.swift */,
-				21793140236EF9A7006123FE /* CategoryRow.swift */,
-				2179313E236EF6B9006123FE /* CategoryDetail.swift */,
-				21CFAA89235522C4001EB758 /* TweetList.swift */,
-				2144C60F23692C3300DC2397 /* TweetRow.swift */,
-				2156AD98236C043C00A59040 /* TweetDetail.swift */,
 				21CFAA8B235522CA001EB758 /* Assets.xcassets */,
 				21CFAA93235522CA001EB758 /* Info.plist */,
 				2148DF6D2379B30F00738580 /* GoogleService-Info.plist */,
