@@ -83,12 +83,13 @@ class LoginButtonController : UIViewController {
                     // Twitter OAuth secret can be retrieved by calling:
                     // authResult.credential.secret
                     let url = URL(string: "https://api.twitter.com/1.1/account/settings.json")!
+                    let env = ProcessInfo.processInfo.environment
 
                     let client = OAuthSwiftClient(
-                        consumerKey: "consumerKey",
-                        consumerSecret: "consumerSecret",
-                        oauthToken: "oauthToken",
-                        oauthTokenSecret: "oauthTokenSecret",
+                        consumerKey: env["CONSUMER_KEY"]!,
+                        consumerSecret: env["CONSUMER_SECRET"]!,
+                        oauthToken: env["OAUTH_TOKEN"]!,
+                        oauthTokenSecret: env["OAUTH_TOKEN_SECRET"]!,
                         version: .oauth1
                     )
 
