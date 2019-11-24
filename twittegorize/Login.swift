@@ -11,6 +11,7 @@ import UIKit
 import FirebaseAuth
 import Firebase
 import FirebaseUI
+import OAuthSwift
 
 
 struct Login: View {
@@ -81,11 +82,45 @@ class LoginButtonController : UIViewController {
                     // authResult.credential.idToken
                     // Twitter OAuth secret can be retrieved by calling:
                     // authResult.credential.secret
+                    let url = URL(string: "https://api.twitter.com/1.1/account/settings.json")!
+
+                    let client = OAuthSwiftClient(
+                        consumerKey: "consumerKey",
+                        consumerSecret: "consumerSecret",
+                        oauthToken: "oauthToken",
+                        oauthTokenSecret: "oauthTokenSecret",
+                        version: .oauth1
+                    )
+
+                    client.get(url) { result in
+                        switch result {
+                        case .success(let response):
+                            guard let setting = try? JSONDecoder().decode(TwitterSetting.self, from: response.data) else {
+                                return
+                            }
+
+                            print(setting)
+
+                        case .failure:
+                            break
+                        }
+                    }
+                     
                     let vc = UIHostingController(rootView: Content().environmentObject(UserData()))
                     vc.modalPresentationStyle = .fullScreen
                     self.present(vc, animated: true)
                 }
             }
         }
+    }
+}
+
+
+// tmp
+struct TwitterSetting: Decodable {
+    let screenName: String
+
+    enum CodingKeys: String, CodingKey {
+        case screenName = "screen_name"
     }
 }
