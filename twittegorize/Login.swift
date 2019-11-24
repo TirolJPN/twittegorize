@@ -82,7 +82,6 @@ class LoginButtonController : UIViewController {
                     // authResult.credential.idToken
                     // Twitter OAuth secret can be retrieved by calling:
                     // authResult.credential.secret
-                    let url = URL(string: "https://api.twitter.com/1.1/account/settings.json")!
                     let env = ProcessInfo.processInfo.environment
 
                     let client = OAuthSwiftClient(
@@ -92,20 +91,34 @@ class LoginButtonController : UIViewController {
                         oauthTokenSecret: env["OAUTH_TOKEN_SECRET"]!,
                         version: .oauth1
                     )
-
+                    let url = URL(string: "https://api.twitter.com/1.1/favorites/list.json")!
                     client.get(url) { result in
                         switch result {
-                        case .success(let response):
-                            guard let setting = try? JSONDecoder().decode(TwitterSetting.self, from: response.data) else {
-                                return
-                            }
-
-                            print(setting)
-
-                        case .failure:
-                            break
+                            case .success(let response):
+                                guard let favorites = try? JSONDecoder().decode(Favorited.self, from: response.data) else {
+                                    return
+                                }
+                                print(response.dataString() as Any)
+                                print(favorites)
+                            case .failure:
+                                break
                         }
                     }
+                    
+                    let tmpUrl = URL(string: "https://api.twitter.com/1.1/account/settings.json")!
+                    client.get(tmpUrl) { result in
+                        switch result {
+                            case .success(let response):
+                                guard let setting = try? JSONDecoder().decode(TwitterSetting.self, from: response.data) else {
+                                    return
+                                }
+                                print(setting)
+                            case .failure:
+                                break
+                        }
+                    }
+                    
+                    
                      
                     let vc = UIHostingController(rootView: Content().environmentObject(UserData()))
                     vc.modalPresentationStyle = .fullScreen
