@@ -20,5 +20,25 @@ struct TweetObject: Identifiable, Decodable {
     let in_reply_to_user_id: Int64
     let in_reply_to_user_id_str: String
     let in_reply_to_screen_name: String
+    let user: User
+//    let coordinates: Coordinates
+//    let place: Places
+    let quoted_status_id: Int64
+    let quoted_status_id_str: String
+    let is_quote_status: Bool
+    let quoted_status: Tweet
+    let retweeted_status: Tweet
+    let quote_count: Int
+    let reply_count: Int
+    let retweet_count: Int
+    let favorite_count: Int
+//    let entities: Entities
+//    let extended_entities: Extended Entities
+    let favorited: Bool
+    let retweeted: Bool
+    let possibly_sensitive: Bool
+    let filter_level: String
+    let lang: String
+//    let matching_rules: Array(Rule)
 }
 
