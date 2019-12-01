@@ -95,7 +95,7 @@ class LoginButtonController : UIViewController {
                     client.get(url) { result in
                         switch result {
                             case .success(let response):
-                                guard let favorites = try? JSONDecoder().decode(Favorited.self, from: response.data) else {
+                                guard let favorites = try? JSONDecoder().decode(TweetObject.self, from: response.data) else {
                                     return
                                 }
                                 print(response.dataString() as Any)
