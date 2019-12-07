@@ -190,6 +190,7 @@
 		21C33074238A63DF0051226C /* Root */ = {
 			isa = PBXGroup;
 			children = (
+				217CBD86237557BE004FDBE7 /* Login.swift */,
 				2156AD9C236C0B9C00A59040 /* Content.swift */,
 			);
 			path = Root;
@@ -223,7 +224,6 @@
 				2144C60A23691C3700DC2397 /* Assets */,
 				212CF6D1235C9F400064217E /* Model */,
 				21C33071238A634B0051226C /* View */,
-				217CBD86237557BE004FDBE7 /* Login.swift */,
 				21CFAA85235522C4001EB758 /* AppDelegate.swift */,
 				21C3306D238666B60051226C /* SceneDelegate.swift */,
 				21CFAA8B235522CA001EB758 /* Assets.xcassets */,

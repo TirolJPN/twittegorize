@@ -8,6 +8,6 @@
 
 import Foundation
 
-struct CoordinatesObject {
+struct CoordinatesObject: Codable {
 
 }
