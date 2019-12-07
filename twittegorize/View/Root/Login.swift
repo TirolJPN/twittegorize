@@ -63,6 +63,7 @@ class LoginButtonController : UIViewController {
     
     @objc func buttonEvent(_ sender: UIButton) {
         print("info about button : \(sender)")
+//        var favorites:[TweetObject]
         self.twitterProvider?.getCredentialWith(_: nil){ (credential, error) in
             print("start to sign in")
             if error != nil {
@@ -92,19 +93,6 @@ class LoginButtonController : UIViewController {
                         version: .oauth1
                     )
                     
-                    let tmpUrl = URL(string: "https://api.twitter.com/1.1/account/settings.json")!
-                    client.get(tmpUrl) { result in
-                        switch result {
-                            case .success(let response):
-                                guard let setting = try? JSONDecoder().decode(TwitterSetting.self, from: response.data) else {
-                                    return
-                                }
-                                print(setting)
-                            case .failure:
-                                break
-                        }
-                    }
-                    
                     let url = URL(string: "https://api.twitter.com/1.1/favorites/list.json")!
                     client.get(url) { result in
                         switch result {
@@ -118,10 +106,6 @@ class LoginButtonController : UIViewController {
                                 break
                         }
                     }
-                    
-                    let vc = UIHostingController(rootView: Content().environmentObject(UserData()))
-                    vc.modalPresentationStyle = .fullScreen
-                    self.present(vc, animated: true)
                 }
             }
         }
