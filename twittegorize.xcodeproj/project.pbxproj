@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		08801581D3AE44BE93903533 /* Pods_twittegorizeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 413F9808461D575386DFE949 /* Pods_twittegorizeTests.framework */; };
+		2128B792239E096700FB0058 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2128B791239E096700FB0058 /* SceneDelegate.swift */; };
 		212CF6D3235CA0070064217E /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 212CF6D2235CA0070064217E /* User.swift */; };
 		212CF6D5235DA6F30064217E /* Tweet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 212CF6D4235DA6F30064217E /* Tweet.swift */; };
 		2144C60E23691CDD00DC2397 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2144C60D23691CDD00DC2397 /* Data.swift */; };
@@ -24,7 +25,6 @@
 		217CBD87237557BE004FDBE7 /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 217CBD86237557BE004FDBE7 /* Login.swift */; };
 		21823D59238BB08E00B68109 /* UserObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21823D58238BB08E00B68109 /* UserObject.swift */; };
 		21823D5B23936A0D00B68109 /* CoordinatesObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21823D5A23936A0D00B68109 /* CoordinatesObject.swift */; };
-		21C3306E238666B60051226C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C3306D238666B60051226C /* SceneDelegate.swift */; };
 		21C3307A238A7A380051226C /* .env in Resources */ = {isa = PBXBuildFile; fileRef = 21C33079238A7A380051226C /* .env */; };
 		21C3307C238A7A610051226C /* .env.sample in Resources */ = {isa = PBXBuildFile; fileRef = 21C3307B238A7A610051226C /* .env.sample */; };
 		21C3307E238AAB810051226C /* TweetObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C3307D238AAB810051226C /* TweetObject.swift */; };
@@ -57,6 +57,7 @@
 
 /* Begin PBXFileReference section */
 		17A774B82AF3AC0A3F01806D /* Pods-twittegorizeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-twittegorizeTests.release.xcconfig"; path = "Target Support Files/Pods-twittegorizeTests/Pods-twittegorizeTests.release.xcconfig"; sourceTree = "<group>"; };
+		2128B791239E096700FB0058 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		212CF6D2235CA0070064217E /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		212CF6D4235DA6F30064217E /* Tweet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tweet.swift; sourceTree = "<group>"; };
 		2144C60D23691CDD00DC2397 /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
@@ -72,7 +73,6 @@
 		217CBD86237557BE004FDBE7 /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
 		21823D58238BB08E00B68109 /* UserObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserObject.swift; sourceTree = "<group>"; };
 		21823D5A23936A0D00B68109 /* CoordinatesObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatesObject.swift; sourceTree = "<group>"; };
-		21C3306D238666B60051226C /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SceneDelegate.swift; path = ../../../../.Trash/SceneDelegate.swift; sourceTree = "<group>"; };
 		21C33079238A7A380051226C /* .env */ = {isa = PBXFileReference; lastKnownFileType = text; path = .env; sourceTree = "<group>"; };
 		21C3307B238A7A610051226C /* .env.sample */ = {isa = PBXFileReference; lastKnownFileType = text; path = .env.sample; sourceTree = "<group>"; };
 		21C3307D238AAB810051226C /* TweetObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetObject.swift; sourceTree = "<group>"; };
@@ -225,7 +225,7 @@
 				212CF6D1235C9F400064217E /* Model */,
 				21C33071238A634B0051226C /* View */,
 				21CFAA85235522C4001EB758 /* AppDelegate.swift */,
-				21C3306D238666B60051226C /* SceneDelegate.swift */,
+				2128B791239E096700FB0058 /* SceneDelegate.swift */,
 				21CFAA8B235522CA001EB758 /* Assets.xcassets */,
 				21CFAA93235522CA001EB758 /* Info.plist */,
 				2148DF6D2379B30F00738580 /* GoogleService-Info.plist */,
@@ -593,12 +593,12 @@
 				2156AD9D236C0B9C00A59040 /* Content.swift in Sources */,
 				21793141236EF9A7006123FE /* CategoryRow.swift in Sources */,
 				21C3307E238AAB810051226C /* TweetObject.swift in Sources */,
-				21C3306E238666B60051226C /* SceneDelegate.swift in Sources */,
 				21CFAA86235522C4001EB758 /* AppDelegate.swift in Sources */,
 				217CBD87237557BE004FDBE7 /* Login.swift in Sources */,
 				21CFAA8A235522C4001EB758 /* TweetList.swift in Sources */,
 				2156AD99236C043C00A59040 /* TweetDetail.swift in Sources */,
 				21823D59238BB08E00B68109 /* UserObject.swift in Sources */,
+				2128B792239E096700FB0058 /* SceneDelegate.swift in Sources */,
 				21823D5B23936A0D00B68109 /* CoordinatesObject.swift in Sources */,
 				2179313F236EF6B9006123FE /* CategoryDetail.swift in Sources */,
 				2144C61023692C3300DC2397 /* TweetRow.swift in Sources */,

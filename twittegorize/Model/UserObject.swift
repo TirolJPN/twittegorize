@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct UserObject: Codable, ObservableObject {
+struct UserObject: Codable {
     let id: Int64
     let id_str: String
     let name: String

@@ -106,6 +106,10 @@ class LoginButtonController : UIViewController {
                                 break
                         }
                     }
+                    
+                    let vc = UIHostingController(rootView: Content().environmentObject(UserData()))
+                    vc.modalPresentationStyle = .fullScreen
+                    self.present(vc, animated: true)
                 }
             }
         }
