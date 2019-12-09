@@ -19,9 +19,3 @@ struct CategoryRow: View {
         }
     }
 }
-
-struct CategoryRow_Previews: PreviewProvider {
-    static var previews: some View {
-        CategoryRow(category: categoryData[0])
-    }
-}

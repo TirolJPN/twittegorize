@@ -62,10 +62,9 @@ class LoginButtonController : UIViewController {
     }
     
     @objc func buttonEvent(_ sender: UIButton) {
-        print("info about button : \(sender)")
-//        var favorites:[TweetObject]
+//        print("info about button : \(sender)")
         self.twitterProvider?.getCredentialWith(_: nil){ (credential, error) in
-            print("start to sign in")
+//            print("start to sign in")
             if error != nil {
                 // Handle error.
             }
@@ -97,17 +96,15 @@ class LoginButtonController : UIViewController {
                     client.get(url) { result in
                         switch result {
                             case .success(let response):
-                                guard let favorites = try? JSONDecoder().decode([TweetObject].self, from: response.data) else {
+                                guard let favorites = try? JSONDecoder().decode([Tweet].self, from: response.data) else {
                                     return
                                 }
-                                print(favorites)
-//                                print(response.dataString() as Any)
                             case .failure:
                                 break
                         }
                     }
                     
-                    let vc = UIHostingController(rootView: Content().environmentObject(UserData()))
+                    let vc = UIHostingController(rootView: Content().environmentObject(DummyData()))
                     vc.modalPresentationStyle = .fullScreen
                     self.present(vc, animated: true)
                 }

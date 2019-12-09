@@ -9,29 +9,23 @@
 import SwiftUI
 
 struct TweetList: View {
-    @EnvironmentObject private var userData: UserData
+    @EnvironmentObject private var dummyData: DummyData
+    @ObservedObject var tweets: TweetsDownloader = TweetsDownloader()
  
     var body: some View {
         NavigationView {
             List {
-                ForEach(userData.tweets) { tweet in
+                ForEach(self.tweets.tweets) { tweet in
                     NavigationLink(
                         destination: TweetDetail(tweet: tweet)
-                            .environmentObject(self.userData)
+                            .environmentObject(self.dummyData)
                     ) {
                         TweetRow(tweet: tweet)
-                            .environmentObject(self.userData)
+                            .environmentObject(self.dummyData)
                     }
                 }
             }
             .navigationBarTitle(Text("Favorited Tweet List"))
         }
-    }
-}
-
-struct TweetList_Previews: PreviewProvider {
-    static var previews: some View {
-        TweetList()
-        .environmentObject(UserData())
     }
 }
