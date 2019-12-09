@@ -23,4 +23,5 @@ target 'twittegorize' do
   
   pod 'FirebaseUI/OAuth'
   pod 'Firebase/Auth'
+  pod 'OAuthSwift', '~> 2.0.0'
 end

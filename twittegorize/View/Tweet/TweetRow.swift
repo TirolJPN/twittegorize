@@ -14,7 +14,7 @@ struct TweetRow: View {
     
     var body: some View {
         HStack {
-            URLImage(URL(string: tweet.user.profileImageURL)!,
+            URLImage(URL(string: tweet.user.profile_image_url_https)!,
                 delay: 0.25,
                 processors: [ Resize(size: CGSize(width: 50.0, height: 50.0), scale: UIScreen.main.scale) ],
                 content:  {
@@ -28,7 +28,7 @@ struct TweetRow: View {
                 HStack{
                     Text(verbatim: tweet.user.name)
                         .bold()
-                    Text(verbatim: "@" + tweet.user.screenName)
+                    Text(verbatim: "@" + tweet.user.screen_name)
                 }
                 Text(verbatim: tweet.text)
             }
@@ -36,8 +36,3 @@ struct TweetRow: View {
     }
 }
 
-struct TweetRow_Previews: PreviewProvider {
-    static var previews: some View {
-        TweetRow(tweet: tweetData[0])
-    }
-}
