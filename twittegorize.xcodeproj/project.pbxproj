@@ -24,6 +24,7 @@
 		21C3307A238A7A380051226C /* .env in Resources */ = {isa = PBXBuildFile; fileRef = 21C33079238A7A380051226C /* .env */; };
 		21C3307C238A7A610051226C /* .env.sample in Resources */ = {isa = PBXBuildFile; fileRef = 21C3307B238A7A610051226C /* .env.sample */; };
 		21C3307E238AAB810051226C /* Tweet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C3307D238AAB810051226C /* Tweet.swift */; };
+		21C555D923A3674400ABE256 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 21C555D823A3674400ABE256 /* README.md */; };
 		21CFAA86235522C4001EB758 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21CFAA85235522C4001EB758 /* AppDelegate.swift */; };
 		21CFAA8A235522C4001EB758 /* TweetList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21CFAA89235522C4001EB758 /* TweetList.swift */; };
 		21CFAA8C235522CA001EB758 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 21CFAA8B235522CA001EB758 /* Assets.xcassets */; };
@@ -68,6 +69,7 @@
 		21C33079238A7A380051226C /* .env */ = {isa = PBXFileReference; lastKnownFileType = text; path = .env; sourceTree = "<group>"; };
 		21C3307B238A7A610051226C /* .env.sample */ = {isa = PBXFileReference; lastKnownFileType = text; path = .env.sample; sourceTree = "<group>"; };
 		21C3307D238AAB810051226C /* Tweet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tweet.swift; sourceTree = "<group>"; };
+		21C555D823A3674400ABE256 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		21CFAA82235522C4001EB758 /* twittegorize.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = twittegorize.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		21CFAA85235522C4001EB758 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		21CFAA89235522C4001EB758 /* TweetList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetList.swift; sourceTree = "<group>"; };
@@ -203,6 +205,7 @@
 		21CFAA79235522C4001EB758 = {
 			isa = PBXGroup;
 			children = (
+				21C555D823A3674400ABE256 /* README.md */,
 				21CFAA84235522C4001EB758 /* twittegorize */,
 				21CFAA9B235522CA001EB758 /* twittegorizeTests */,
 				21CFAAA6235522CA001EB758 /* twittegorizeUITests */,
@@ -407,6 +410,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				21C555D923A3674400ABE256 /* README.md in Resources */,
 				21CFAA8F235522CA001EB758 /* Preview Assets.xcassets in Resources */,
 				21CFAA8C235522CA001EB758 /* Assets.xcassets in Resources */,
 				2148DF6E2379B30F00738580 /* GoogleService-Info.plist in Resources */,
