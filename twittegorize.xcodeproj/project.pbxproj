@@ -19,6 +19,7 @@
 		2179313F236EF6B9006123FE /* CategoryDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2179313E236EF6B9006123FE /* CategoryDetail.swift */; };
 		21793141236EF9A7006123FE /* CategoryRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21793140236EF9A7006123FE /* CategoryRow.swift */; };
 		217CBD87237557BE004FDBE7 /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 217CBD86237557BE004FDBE7 /* Login.swift */; };
+		217F66F523A6545600BACFD6 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 217F66F423A6545600BACFD6 /* File.swift */; };
 		2180881D239E5A8F00FA43FC /* TweetsDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2180881C239E5A8F00FA43FC /* TweetsDownloader.swift */; };
 		21823D59238BB08E00B68109 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21823D58238BB08E00B68109 /* User.swift */; };
 		21C3307A238A7A380051226C /* .env in Resources */ = {isa = PBXBuildFile; fileRef = 21C33079238A7A380051226C /* .env */; };
@@ -64,6 +65,7 @@
 		2179313E236EF6B9006123FE /* CategoryDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryDetail.swift; sourceTree = "<group>"; };
 		21793140236EF9A7006123FE /* CategoryRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryRow.swift; sourceTree = "<group>"; };
 		217CBD86237557BE004FDBE7 /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
+		217F66F423A6545600BACFD6 /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
 		2180881C239E5A8F00FA43FC /* TweetsDownloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetsDownloader.swift; sourceTree = "<group>"; };
 		21823D58238BB08E00B68109 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		21C33079238A7A380051226C /* .env */ = {isa = PBXFileReference; lastKnownFileType = text; path = .env; sourceTree = "<group>"; };
@@ -136,6 +138,14 @@
 			children = (
 			);
 			path = Assets;
+			sourceTree = "<group>";
+		};
+		217F66F323A6544400BACFD6 /* tests */ = {
+			isa = PBXGroup;
+			children = (
+				217F66F423A6545600BACFD6 /* File.swift */,
+			);
+			path = tests;
 			sourceTree = "<group>";
 		};
 		2180881A239E591F00FA43FC /* CodableObjects */ = {
@@ -254,6 +264,7 @@
 		21CFAA9B235522CA001EB758 /* twittegorizeTests */ = {
 			isa = PBXGroup;
 			children = (
+				217F66F323A6544400BACFD6 /* tests */,
 				21CFAA9C235522CA001EB758 /* twittegorizeTests.swift */,
 				21CFAA9E235522CA001EB758 /* Info.plist */,
 			);
@@ -617,6 +628,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				21CFAA9D235522CA001EB758 /* twittegorizeTests.swift in Sources */,
+				217F66F523A6545600BACFD6 /* File.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -678,6 +690,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -738,6 +751,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
