@@ -30,5 +30,11 @@ class twittegorizeTests: XCTestCase {
             // Put the code you want to measure the time of here.
         }
     }
-
+    
+    // additional tests
+    func testTestSample() {
+        let testSample = TestSample()
+        let result = testSample.add(a: 2, b: 3)
+        XCTAssertEqual(result, 5)
+    }
 }
