@@ -20,6 +20,8 @@
 		21793141236EF9A7006123FE /* CategoryRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21793140236EF9A7006123FE /* CategoryRow.swift */; };
 		217CBD87237557BE004FDBE7 /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 217CBD86237557BE004FDBE7 /* Login.swift */; };
 		217F66F523A6545600BACFD6 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 217F66F423A6545600BACFD6 /* File.swift */; };
+		217F66F823AA4BF600BACFD6 /* RealmCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 217F66F723AA4BF600BACFD6 /* RealmCategory.swift */; };
+		217F66FC23AA4E8700BACFD6 /* RealmCategorisedTweet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 217F66FB23AA4E8700BACFD6 /* RealmCategorisedTweet.swift */; };
 		2180881D239E5A8F00FA43FC /* TweetsDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2180881C239E5A8F00FA43FC /* TweetsDownloader.swift */; };
 		21823D59238BB08E00B68109 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21823D58238BB08E00B68109 /* User.swift */; };
 		21C3307A238A7A380051226C /* .env in Resources */ = {isa = PBXBuildFile; fileRef = 21C33079238A7A380051226C /* .env */; };
@@ -66,6 +68,8 @@
 		21793140236EF9A7006123FE /* CategoryRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryRow.swift; sourceTree = "<group>"; };
 		217CBD86237557BE004FDBE7 /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
 		217F66F423A6545600BACFD6 /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
+		217F66F723AA4BF600BACFD6 /* RealmCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmCategory.swift; sourceTree = "<group>"; };
+		217F66FB23AA4E8700BACFD6 /* RealmCategorisedTweet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmCategorisedTweet.swift; sourceTree = "<group>"; };
 		2180881C239E5A8F00FA43FC /* TweetsDownloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetsDownloader.swift; sourceTree = "<group>"; };
 		21823D58238BB08E00B68109 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		21C33079238A7A380051226C /* .env */ = {isa = PBXFileReference; lastKnownFileType = text; path = .env; sourceTree = "<group>"; };
@@ -126,7 +130,8 @@
 		212CF6D1235C9F400064217E /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				2180881B239E592C00FA43FC /* ObservableObject */,
+				217F66F623AA4BDE00BACFD6 /* RealmObjects */,
+				2180881B239E592C00FA43FC /* ObservableObjects */,
 				2180881A239E591F00FA43FC /* CodableObjects */,
 				21C33070238A632D0051226C /* Dummy */,
 			);
@@ -148,6 +153,15 @@
 			path = tests;
 			sourceTree = "<group>";
 		};
+		217F66F623AA4BDE00BACFD6 /* RealmObjects */ = {
+			isa = PBXGroup;
+			children = (
+				217F66F723AA4BF600BACFD6 /* RealmCategory.swift */,
+				217F66FB23AA4E8700BACFD6 /* RealmCategorisedTweet.swift */,
+			);
+			path = RealmObjects;
+			sourceTree = "<group>";
+		};
 		2180881A239E591F00FA43FC /* CodableObjects */ = {
 			isa = PBXGroup;
 			children = (
@@ -157,12 +171,12 @@
 			path = CodableObjects;
 			sourceTree = "<group>";
 		};
-		2180881B239E592C00FA43FC /* ObservableObject */ = {
+		2180881B239E592C00FA43FC /* ObservableObjects */ = {
 			isa = PBXGroup;
 			children = (
 				2180881C239E5A8F00FA43FC /* TweetsDownloader.swift */,
 			);
-			path = ObservableObject;
+			path = ObservableObjects;
 			sourceTree = "<group>";
 		};
 		21C33070238A632D0051226C /* Dummy */ = {
@@ -616,7 +630,9 @@
 				21823D59238BB08E00B68109 /* User.swift in Sources */,
 				2128B792239E096700FB0058 /* SceneDelegate.swift in Sources */,
 				2179313F236EF6B9006123FE /* CategoryDetail.swift in Sources */,
+				217F66FC23AA4E8700BACFD6 /* RealmCategorisedTweet.swift in Sources */,
 				2144C61023692C3300DC2397 /* TweetRow.swift in Sources */,
+				217F66F823AA4BF600BACFD6 /* RealmCategory.swift in Sources */,
 				2180881D239E5A8F00FA43FC /* TweetsDownloader.swift in Sources */,
 				2144C6122369588100DC2397 /* DummyCategories.swift in Sources */,
 				2179313D236EF215006123FE /* CategoryList.swift in Sources */,
