@@ -15,7 +15,7 @@ class RealmCategory: Object {
     @objc dynamic var description: String = ""
     @objc dynamic var categorised_tweets = List<RealmCategorisedTweet>
     
-    // Settings for primary key
+    // A setting for primary key
     override static func primaryKey() -> String? {
         return "id"
     }

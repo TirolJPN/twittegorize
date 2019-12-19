@@ -12,4 +12,9 @@ import RealmSwift
 class RealmCategorisedTweet: Object {
     @objc dynamic var id: Int = -1
     @objc dynamic var tweet_id: Int64 = -1
+    
+    // A setting for primary key
+    override static func primaryKey() -> String {
+        return "id"
+    }
 }
