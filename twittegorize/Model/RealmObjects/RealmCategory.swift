@@ -10,10 +10,9 @@ import Foundation
 import RealmSwift
 
 class RealmCategory: Object {
-    @objc dynamic var id: Int = -1
+    @objc dynamic var id: Int64 = -1
     @objc dynamic var title: String = ""
-    @objc dynamic var description: String = ""
-    @objc dynamic var categorised_tweets = List<RealmCategorisedTweet>
+    @objc dynamic var detail: String = ""
     
     // A setting for primary key
     override static func primaryKey() -> String? {
