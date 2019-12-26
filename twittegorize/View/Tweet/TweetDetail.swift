@@ -12,7 +12,13 @@ import Combine
 
 struct TweetDetail: View {
     var tweet: Tweet
+    private var realm: Realm!
     @EnvironmentObject private var dummyData: DummyData
+    
+    func addDummyCategorisedTweet(tweet: Tweet) {
+        // TODO: Realmの追加処理をかく
+        // try! realm.write {}
+    }
     
     var body: some View {
         VStack(alignment: .leading) {
@@ -43,11 +49,12 @@ struct TweetDetail: View {
             }
             .onTapGesture {
                 print(1)
+                // TODO: Pickerが更新された時点で√addDummyCategorisedTweet(tweet: Tweet)を呼び出す
+                
 //                self.userData.tweets[self.userData.tweets.index(where: {$0.categoryId == tweet.id} )] = "1"
 //                self.userData.tweets[self.userData.tweets.first(where: {$0.id == tweet.id} )].categoryId = "1"
             }
 //            Spacer()
         }
     }
-    
 }
