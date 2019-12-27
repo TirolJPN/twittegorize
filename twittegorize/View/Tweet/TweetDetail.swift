@@ -9,15 +9,66 @@
 import SwiftUI
 import URLImage
 import Combine
+import RealmSwift
+
+/*
+ class RealmCategorisedTweet: Object {
+     @objc dynamic var id: Int64 = -1
+     
+     @objc dynamic var category_id: Int64 = -1
+     
+     @objc dynamic var tweet_created_at: String = ""
+     @objc dynamic var tweet_id: Int64 = -1
+     @objc dynamic var tweet_id_str: String = ""
+     @objc dynamic var tweet_text: String = ""
+     @objc dynamic var tweet_source: String = ""
+     @objc dynamic var tweet_truncated: Bool = false
+     @objc dynamic var tweet_retweet_count: Int = -1
+     @objc dynamic var tweet_favorite_count: Int = -1
+     @objc dynamic var tweet_favorited: Bool = false
+     @objc dynamic var tweet_retweeted: Bool = false
+     
+ //    @objc dynamic var user: User
+     @objc dynamic var  user_id: Int64 = -1
+     @objc dynamic var  user_id_str: String = ""
+     @objc dynamic var  user_name: String = ""
+     @objc dynamic var  user_screen_name: String = ""
+     @objc dynamic var  user_location: String = ""
+     @objc dynamic var  user_profile_image_url_https: String = ""
+     
+     // A setting for primary key
+     override static func primaryKey() -> String {
+         return "id"
+     }
+ }
+
+ */
 
 struct TweetDetail: View {
     var tweet: Tweet
-    private var realm: Realm!
+    var realm: Realm!
     @EnvironmentObject private var dummyData: DummyData
     
-    func addDummyCategorisedTweet(tweet: Tweet) {
+    func addDummyCategorisedTweet(tweet: Tweet, category_id: Int64) {
         // TODO: Realmの追加処理をかく
-        // try! realm.write {}
+         try! realm.write {
+            realm.add(
+                RealmCategorisedTweet(
+                    value:
+                    [
+                        "category_id": category_id,
+                        "tweet_created_at": tweet.created_at,
+                        "tweet_id": tweet.id,
+                        "tweet_id_str": tweet.id_str,
+                        "tweet_text": tweet.text,
+                        "tweet_source": tweet.source,
+                        "tweet_truncated": tweet.truncated,
+                        "tweet_retweet_count": tweet.retweet_count,
+                        "tweet_favorited": tweet.favorited,
+                    ]
+                )
+            )
+        }
     }
     
     var body: some View {
@@ -49,11 +100,13 @@ struct TweetDetail: View {
             }
             .onTapGesture {
                 print(1)
-                // TODO: Pickerが更新された時点で√addDummyCategorisedTweet(tweet: Tweet)を呼び出す
+                // TODO: Pickerが更新された時点でaddDummyCategorisedTweet(tweet: Tweet)を呼び出す
                 
 //                self.userData.tweets[self.userData.tweets.index(where: {$0.categoryId == tweet.id} )] = "1"
 //                self.userData.tweets[self.userData.tweets.first(where: {$0.id == tweet.id} )].categoryId = "1"
             }
+        
+
 //            Spacer()
         }
     }
