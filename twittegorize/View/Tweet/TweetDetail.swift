@@ -64,7 +64,16 @@ struct TweetDetail: View {
                         "tweet_source": tweet.source,
                         "tweet_truncated": tweet.truncated,
                         "tweet_retweet_count": tweet.retweet_count,
+                        "tweet_favorited_count": tweet.favorite_count,
                         "tweet_favorited": tweet.favorited,
+                        "tweet_retweeted": tweet.retweeted,
+                        
+                        "user_id": tweet.user.id,
+                        "user_id_str": tweet.user.id,
+                        "user_name": tweet.user.name,
+                        "user_screen_name": tweet.user.screen_name,
+                        "user_location": tweet.user.location,
+                        "user_profile_image_url_https": tweet.user.profile_image_url_https
                     ]
                 )
             )
