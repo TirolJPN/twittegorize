@@ -12,7 +12,7 @@ import RealmSwift
 class RealmCategorisedTweet: Object {
     @objc dynamic var id: Int64 = -1
     
-    @objc dynamic var category_id: Int64 = -1
+    @objc dynamic var category_id: Int = -1
     
     @objc dynamic var tweet_created_at: String = ""
     @objc dynamic var tweet_id: Int64 = -1
@@ -20,10 +20,6 @@ class RealmCategorisedTweet: Object {
     @objc dynamic var tweet_text: String = ""
     @objc dynamic var tweet_source: String = ""
     @objc dynamic var tweet_truncated: Bool = false
-    @objc dynamic var tweet_retweet_count: Int = -1
-    @objc dynamic var tweet_favorite_count: Int = -1
-    @objc dynamic var tweet_favorited: Bool = false
-    @objc dynamic var tweet_retweeted: Bool = false
     
 //    @objc dynamic var user: User
     @objc dynamic var  user_id: Int64 = -1
