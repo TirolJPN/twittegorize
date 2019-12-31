@@ -10,7 +10,7 @@ import Foundation
 import RealmSwift
 
 class RealmCategorisedTweet: Object {
-    @objc dynamic var id: Int64 = -1
+//    @objc dynamic var id: Int64 = -1
     
     @objc dynamic var category_id: Int = -1
     
@@ -28,9 +28,4 @@ class RealmCategorisedTweet: Object {
     @objc dynamic var  user_screen_name: String = ""
     @objc dynamic var  user_location: String = ""
     @objc dynamic var  user_profile_image_url_https: String = ""
-    
-    // A setting for primary key
-    override static func primaryKey() -> String {
-        return "id"
-    }
 }
