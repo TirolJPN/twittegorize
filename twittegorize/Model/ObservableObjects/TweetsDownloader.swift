@@ -35,7 +35,6 @@ class TweetsDownloader: ObservableObject {
                         return
                     }
                     self.tweets = favoritdTweets
-                    print(self.tweets)
                 case .failure:
                     self.tweets = []
                     print("failure!!!!")

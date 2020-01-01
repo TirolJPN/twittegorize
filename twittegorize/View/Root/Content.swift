@@ -19,6 +19,7 @@ struct Content: View {
                 .tabItem {
                     Text("Category")
                 }
+            DummyRealmList()
         }
     }
 }

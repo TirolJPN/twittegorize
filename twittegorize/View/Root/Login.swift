@@ -17,7 +17,6 @@ import OAuthSwift
 struct Login: View {
     let backGroundColor = LinearGradient(gradient: Gradient(colors: [Color.white, Color(red: 0.6, green: 0.6, blue: 1.0)]),
                                          startPoint: .top, endPoint: .bottom)
-    
     var body: some View {
         ZStack {
             backGroundColor.edgesIgnoringSafeArea(.all)
@@ -33,10 +32,8 @@ struct LoginButtonControllerWrapper: UIViewControllerRepresentable {
         return LoginButtonController()
     }
     
-    
     func updateUIViewController(_ uiViewController: LoginButtonControllerWrapper.UIViewControllerType, context: UIViewControllerRepresentableContext<LoginButtonControllerWrapper>) {
     }
-
 }
 
 class LoginButtonController : UIViewController {
@@ -74,14 +71,7 @@ class LoginButtonController : UIViewController {
                         // Handle error.
                         print("fail to sign in")
                     }
-                    // User is signed in.
-                    // IdP data available in authResult.additionalUserInfo.profile.
-                    // Twitter OAuth access token can also be retrieved by:
-                    // authResult.credential.accessToken
-                    // Twitter OAuth ID token can be retrieved by calling:
-                    // authResult.credential.idToken
-                    // Twitter OAuth secret can be retrieved by calling:
-                    // authResult.credential.secret
+                    
                     let env = ProcessInfo.processInfo.environment
 
                     let client = OAuthSwiftClient(
@@ -110,15 +100,5 @@ class LoginButtonController : UIViewController {
                 }
             }
         }
-    }
-}
-
-
-// tmp
-struct TwitterSetting: Decodable {
-    let screenName: String
-
-    enum CodingKeys: String, CodingKey {
-        case screenName = "screen_name"
     }
 }
