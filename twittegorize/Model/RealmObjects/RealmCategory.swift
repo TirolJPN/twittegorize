@@ -10,12 +10,37 @@ import Foundation
 import RealmSwift
 
 class RealmCategory: Object {
-    @objc dynamic var id: Int64 = -1
+    // uuidをデフォルト値とするユニークなString型のID
+    @objc dynamic var id: String = NSUUID().uuidString
     @objc dynamic var title: String = ""
     @objc dynamic var detail: String = ""
     
     // A setting for primary key
     override static func primaryKey() -> String? {
         return "id"
+    }
+}
+
+class MyRealmCategory {
+    func createRealmCategory(title: String, detail: String) {
+        let realmCategory = RealmCategory()
+        realmCategory.title = title
+        realmCategory.detail = detail
+        
+        let realm = try! Realm()
+        try! realm.write {
+            realm.add(realmCategory)
+        }
+    }
+    
+    func createDummyRealmCategory() {
+        let realmCategory = RealmCategory()
+        realmCategory.title = "dummy title"
+        realmCategory.detail = "dummy detail"
+        
+        let realm = try! Realm()
+        try! realm.write {
+            realm.add(realmCategory)
+        }
     }
 }

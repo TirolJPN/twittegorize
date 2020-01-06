@@ -10,8 +10,6 @@ import Foundation
 import RealmSwift
 
 class RealmCategorisedTweet: Object {
-//    @objc dynamic var id: Int64 = -1
-    
     @objc dynamic var category_id: Int = -1
     
     @objc dynamic var tweet_created_at: String = ""
