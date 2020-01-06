@@ -7,25 +7,25 @@
 //
 
 import SwiftUI
+import RealmSwift
 
 struct CategoryList: View {
-    @EnvironmentObject private var dummyData: DummyData
     @ObservedObject var tweets: TweetsDownloader = TweetsDownloader()
+    @ObservedObject var categories = BindableResults(results: try! Realm().objects(RealmCategory.self))
     
     var body: some View {
         ZStack {
             NavigationView {
                 List {
-                    ForEach(dummyData.categories) { category in
+                    ForEach (categories.results, id: \.id)  { category in
                         NavigationLink (
                             destination: CategoryDetail(tweets: [Tweet](), categoryTitle: category.title)
-                                .environmentObject(self.dummyData)
                         ) {
                             CategoryRow(category: category)
                         }
                     }
-                    .onDelete(perform: deletePlace)
-                    .onMove(perform: movePlace)
+//                    .onDelete(perform: deletePlace)
+//                    .onMove(perform: movePlace)
                 }
                 .navigationBarItems(trailing: EditButton())
                 .navigationBarTitle(Text("Category List"))
@@ -36,9 +36,7 @@ struct CategoryList: View {
                 HStack {
                     Spacer()
                     Button(action: {
-                        self.dummyData.categories.append(
-                            Category(id: String(self.dummyData.categories.count + 1), title: "追加したカテゴリー", description: "追加したカテゴリー")
-                        )
+                        MyRealmCategory().createDummyRealmCategory()
                     }, label: {
                         Text(verbatim: "+")
                         .font(.system(.largeTitle))
@@ -59,12 +57,33 @@ struct CategoryList: View {
     }
     
     func deletePlace(at offset: IndexSet){
-        if let offset = offset.last {
-            self.dummyData.categories.remove(at: offset)
-        }
+//        if let offset = offset.last {
+//            self.dummyData.categories.remove(at: offset)
+//        }
     }
     
     func movePlace(from source: IndexSet, to destionation: Int) {
-        print(source, destionation)
+//        print(source, destionation)
+    }
+}
+
+class BindableResults<Element>: ObservableObject where Element: RealmSwift.RealmCollectionValue {
+
+    var results: Results<Element>
+    private var token: NotificationToken!
+
+    init(results: Results<Element>) {
+        self.results = results
+        lateInit()
+    }
+
+    func lateInit() {
+        token = results.observe { [weak self] _ in
+            self?.objectWillChange.send()
+        }
+    }
+
+    deinit {
+        token.invalidate()
     }
 }

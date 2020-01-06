@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct CategoryRow: View {
-    var category: Category
+    var category: RealmCategory
     
     var body: some View {
         VStack(alignment: .leading) {
