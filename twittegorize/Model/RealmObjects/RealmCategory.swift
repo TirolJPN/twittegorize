@@ -35,8 +35,8 @@ class MyRealmCategory {
     
     func createDummyRealmCategory() {
         let realmCategory = RealmCategory()
-        realmCategory.title = "dummy title"
-        realmCategory.detail = "dummy detail"
+        realmCategory.title = "dummy category " + realmCategory.id
+        realmCategory.detail = "dummy detail" + realmCategory.id
         
         let realm = try! Realm()
         try! realm.write {

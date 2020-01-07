@@ -15,7 +15,7 @@ struct CategoryRow: View {
         VStack(alignment: .leading) {
             Text(verbatim: category.title)
                 .font(.title)
-            Text(verbatim: category.description)
+            Text(verbatim: category.detail)
         }
     }
 }

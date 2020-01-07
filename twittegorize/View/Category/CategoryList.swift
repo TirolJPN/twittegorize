@@ -24,8 +24,7 @@ struct CategoryList: View {
                             CategoryRow(category: category)
                         }
                     }
-//                    .onDelete(perform: deletePlace)
-//                    .onMove(perform: movePlace)
+                    .onDelete(perform: delete(at:))
                 }
                 .navigationBarItems(trailing: EditButton())
                 .navigationBarTitle(Text("Category List"))
@@ -56,14 +55,11 @@ struct CategoryList: View {
         }
     }
     
-    func deletePlace(at offset: IndexSet){
-//        if let offset = offset.last {
-//            self.dummyData.categories.remove(at: offset)
-//        }
-    }
-    
-    func movePlace(from source: IndexSet, to destionation: Int) {
-//        print(source, destionation)
+    // 該当するdカテゴリーを削除する
+    func delete(at offset: IndexSet){
+        let categoriesArray = Array(categories.results)
+        let index = offset.first!
+        print( categoriesArray[index] )
     }
 }
 
