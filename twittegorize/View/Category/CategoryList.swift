@@ -59,7 +59,13 @@ struct CategoryList: View {
     func delete(at offset: IndexSet){
         let categoriesArray = Array(categories.results)
         let index = offset.first!
-        print( categoriesArray[index] )
+        
+        let realm = try! Realm()
+        let results = realm.objects(RealmCategory.self).filter("id == '\(categoriesArray[index].id)'" )
+        try! realm.write {
+            realm.delete(results)
+        }
+        realm.refresh()
     }
 }
 

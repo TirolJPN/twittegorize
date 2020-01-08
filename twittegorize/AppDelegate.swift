@@ -44,6 +44,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         var config = Realm.Configuration()
         config.deleteRealmIfMigrationNeeded = true
         let realm = try! Realm(configuration: config)
+        print(Realm.Configuration.defaultConfiguration.fileURL!)
         
         return true
     }
