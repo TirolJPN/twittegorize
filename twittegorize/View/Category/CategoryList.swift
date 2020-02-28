@@ -8,6 +8,7 @@
 
 import SwiftUI
 import RealmSwift
+import Combine
 
 struct CategoryList: View {
     @ObservedObject var tweets: TweetsDownloader = TweetsDownloader()
@@ -88,4 +89,18 @@ class BindableResults<Element>: ObservableObject where Element: RealmSwift.Realm
     deinit {
         token.invalidate()
     }
+}
+
+class CategoryViewModel: ObservableObject {
+    var objectWillChange: ObservableObjectPublisher = .init()
+    private(set) var RealmCategories: Results<RealmCategory> = RealmCategory.all()
+    private var notificationTokens: [NotificationToken] = []
+    
+    init() {
+        notificationTokens.append(RealmCategories.observe { _ in
+            // SwiftUIに再レンダリングが必要なことを伝える
+            self.objectWillChange.send()
+        })
+    }
+    
 }

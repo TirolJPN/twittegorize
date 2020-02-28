@@ -14,10 +14,15 @@ class RealmCategory: Object {
     @objc dynamic var id: String = NSUUID().uuidString
     @objc dynamic var title: String = ""
     @objc dynamic var detail: String = ""
+    private static var realm = try! Realm()
     
     // A setting for primary key
     override static func primaryKey() -> String? {
         return "id"
+    }
+    
+    static func all() -> Results<RealmCategory> {
+        realm.objects(RealmCategory.self)
     }
 }
 
