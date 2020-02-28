@@ -7,11 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		08801581D3AE44BE93903533 /* Pods_twittegorizeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 413F9808461D575386DFE949 /* Pods_twittegorizeTests.framework */; };
+		09279DCFCF7465F2820AA79E /* libPods-twittegorizeTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 81F0E20251A5BBA54E2CEF56 /* libPods-twittegorizeTests.a */; };
 		2128B792239E096700FB0058 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2128B791239E096700FB0058 /* SceneDelegate.swift */; };
 		2144C61023692C3300DC2397 /* TweetRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2144C60F23692C3300DC2397 /* TweetRow.swift */; };
 		2144C6122369588100DC2397 /* DummyCategories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2144C6112369588100DC2397 /* DummyCategories.swift */; };
-		2144C615236965BF00DC2397 /* URLImage in Frameworks */ = {isa = PBXBuildFile; productRef = 2144C614236965BF00DC2397 /* URLImage */; };
+		2144C615236965BF00DC2397 /* BuildFile in Frameworks */ = {isa = PBXBuildFile; productRef = 2144C614236965BF00DC2397 /* SwiftPackageProductDependency */; };
 		2148DF6E2379B30F00738580 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2148DF6D2379B30F00738580 /* GoogleService-Info.plist */; };
 		2156AD99236C043C00A59040 /* TweetDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2156AD98236C043C00A59040 /* TweetDetail.swift */; };
 		2156AD9D236C0B9C00A59040 /* Content.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2156AD9C236C0B9C00A59040 /* Content.swift */; };
@@ -35,8 +35,8 @@
 		21CFAA9D235522CA001EB758 /* twittegorizeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21CFAA9C235522CA001EB758 /* twittegorizeTests.swift */; };
 		21CFAAA8235522CA001EB758 /* twittegorizeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21CFAAA7235522CA001EB758 /* twittegorizeUITests.swift */; };
 		21D0502E23B47E9600ECBF6C /* DummyRealmList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21D0502D23B47E9600ECBF6C /* DummyRealmList.swift */; };
-		83F27061556916F78E0A4957 /* Pods_twittegorize.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 430704DDFEBDD4F99874C007 /* Pods_twittegorize.framework */; };
-		C792C7FA1816B96DC1E8C1C7 /* Pods_twittegorize_twittegorizeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C4340ED0BD4F32A15FFDDD7 /* Pods_twittegorize_twittegorizeUITests.framework */; };
+		27EAF4D68B3D251ECE46BF59 /* libPods-twittegorize.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F8B9DBCE579E745BFD284001 /* libPods-twittegorize.a */; };
+		8AF397BCE63796A48ADFC97F /* libPods-twittegorize-twittegorizeUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C536F1FDEE6749DA9DF31638 /* libPods-twittegorize-twittegorizeUITests.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -90,14 +90,14 @@
 		21CFAAA7235522CA001EB758 /* twittegorizeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = twittegorizeUITests.swift; sourceTree = "<group>"; };
 		21CFAAA9235522CA001EB758 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		21D0502D23B47E9600ECBF6C /* DummyRealmList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyRealmList.swift; sourceTree = "<group>"; };
-		413F9808461D575386DFE949 /* Pods_twittegorizeTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_twittegorizeTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		430704DDFEBDD4F99874C007 /* Pods_twittegorize.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_twittegorize.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F28996EBBD17618BC794497 /* Pods-twittegorize-twittegorizeUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-twittegorize-twittegorizeUITests.debug.xcconfig"; path = "Target Support Files/Pods-twittegorize-twittegorizeUITests/Pods-twittegorize-twittegorizeUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		8C4340ED0BD4F32A15FFDDD7 /* Pods_twittegorize_twittegorizeUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_twittegorize_twittegorizeUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		81F0E20251A5BBA54E2CEF56 /* libPods-twittegorizeTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-twittegorizeTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE879F70040CB7680500A9AB /* Pods-twittegorize.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-twittegorize.release.xcconfig"; path = "Target Support Files/Pods-twittegorize/Pods-twittegorize.release.xcconfig"; sourceTree = "<group>"; };
 		B85689F6EE56122BD14FD797 /* Pods-twittegorize-twittegorizeUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-twittegorize-twittegorizeUITests.release.xcconfig"; path = "Target Support Files/Pods-twittegorize-twittegorizeUITests/Pods-twittegorize-twittegorizeUITests.release.xcconfig"; sourceTree = "<group>"; };
+		C536F1FDEE6749DA9DF31638 /* libPods-twittegorize-twittegorizeUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-twittegorize-twittegorizeUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6C50903DFB4FB16B7750972 /* Pods-twittegorize.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-twittegorize.debug.xcconfig"; path = "Target Support Files/Pods-twittegorize/Pods-twittegorize.debug.xcconfig"; sourceTree = "<group>"; };
 		EB4C4A742FCC48B228B00FC6 /* Pods-twittegorizeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-twittegorizeTests.debug.xcconfig"; path = "Target Support Files/Pods-twittegorizeTests/Pods-twittegorizeTests.debug.xcconfig"; sourceTree = "<group>"; };
+		F8B9DBCE579E745BFD284001 /* libPods-twittegorize.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-twittegorize.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,8 +105,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2144C615236965BF00DC2397 /* URLImage in Frameworks */,
-				83F27061556916F78E0A4957 /* Pods_twittegorize.framework in Frameworks */,
+				2144C615236965BF00DC2397 /* BuildFile in Frameworks */,
+				27EAF4D68B3D251ECE46BF59 /* libPods-twittegorize.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -114,7 +114,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				08801581D3AE44BE93903533 /* Pods_twittegorizeTests.framework in Frameworks */,
+				09279DCFCF7465F2820AA79E /* libPods-twittegorizeTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -122,7 +122,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C792C7FA1816B96DC1E8C1C7 /* Pods_twittegorize_twittegorizeUITests.framework in Frameworks */,
+				8AF397BCE63796A48ADFC97F /* libPods-twittegorize-twittegorizeUITests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -313,9 +313,9 @@
 		D65ABD329530E435DFFBAF7C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				430704DDFEBDD4F99874C007 /* Pods_twittegorize.framework */,
-				8C4340ED0BD4F32A15FFDDD7 /* Pods_twittegorize_twittegorizeUITests.framework */,
-				413F9808461D575386DFE949 /* Pods_twittegorizeTests.framework */,
+				F8B9DBCE579E745BFD284001 /* libPods-twittegorize.a */,
+				C536F1FDEE6749DA9DF31638 /* libPods-twittegorize-twittegorizeUITests.a */,
+				81F0E20251A5BBA54E2CEF56 /* libPods-twittegorizeTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -332,8 +332,7 @@
 				21CFAA7F235522C4001EB758 /* Frameworks */,
 				21C33068238647FE0051226C /* ShellScript */,
 				21CFAA80235522C4001EB758 /* Resources */,
-				DC5E57E0C8B3FA2573129D43 /* [CP] Embed Pods Frameworks */,
-				B09DF6DB82393592A768F6A1 /* [CP] Copy Pods Resources */,
+				2B28F60456F6AC6122C6B7A5 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -341,7 +340,7 @@
 			);
 			name = twittegorize;
 			packageProductDependencies = (
-				2144C614236965BF00DC2397 /* URLImage */,
+				2144C614236965BF00DC2397 /* SwiftPackageProductDependency */,
 			);
 			productName = twittegorize;
 			productReference = 21CFAA82235522C4001EB758 /* twittegorize.app */;
@@ -374,8 +373,7 @@
 				21CFAA9F235522CA001EB758 /* Sources */,
 				21CFAAA0235522CA001EB758 /* Frameworks */,
 				21CFAAA1235522CA001EB758 /* Resources */,
-				255011D8CAC4AB5F64982A5D /* [CP] Embed Pods Frameworks */,
-				68898ACDD0EBDC7046011C1A /* [CP] Copy Pods Resources */,
+				BF9AD25BBAC8AA363AEF61A5 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -420,7 +418,7 @@
 			);
 			mainGroup = 21CFAA79235522C4001EB758;
 			packageReferences = (
-				2144C613236965BF00DC2397 /* XCRemoteSwiftPackageReference "url-image" */,
+				2144C613236965BF00DC2397 /* RemoteSwiftPackageReference */,
 			);
 			productRefGroup = 21CFAA83235522C4001EB758 /* Products */;
 			projectDirPath = "";
@@ -479,24 +477,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "
-";
+			shellScript = "\n";
 		};
-		255011D8CAC4AB5F64982A5D /* [CP] Embed Pods Frameworks */ = {
+		2B28F60456F6AC6122C6B7A5 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-twittegorize-twittegorizeUITests/Pods-twittegorize-twittegorizeUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-twittegorize/Pods-twittegorize-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
-			name = "[CP] Embed Pods Frameworks";
+			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-twittegorize-twittegorizeUITests/Pods-twittegorize-twittegorizeUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-twittegorize/Pods-twittegorize-resources-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-twittegorize-twittegorizeUITests/Pods-twittegorize-twittegorizeUITests-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-twittegorize/Pods-twittegorize-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		41E27EF26606EFC616FC9671 /* [CP] Check Pods Manifest.lock */ = {
@@ -521,40 +518,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		68898ACDD0EBDC7046011C1A /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-twittegorize-twittegorizeUITests/Pods-twittegorize-twittegorizeUITests-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-twittegorize-twittegorizeUITests/Pods-twittegorize-twittegorizeUITests-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-twittegorize-twittegorizeUITests/Pods-twittegorize-twittegorizeUITests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		B09DF6DB82393592A768F6A1 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-twittegorize/Pods-twittegorize-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-twittegorize/Pods-twittegorize-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-twittegorize/Pods-twittegorize-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		BBC6F4B282F9C7375A09F7F7 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -577,21 +540,21 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		DC5E57E0C8B3FA2573129D43 /* [CP] Embed Pods Frameworks */ = {
+		BF9AD25BBAC8AA363AEF61A5 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-twittegorize/Pods-twittegorize-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-twittegorize-twittegorizeUITests/Pods-twittegorize-twittegorizeUITests-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
-			name = "[CP] Embed Pods Frameworks";
+			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-twittegorize/Pods-twittegorize-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-twittegorize-twittegorizeUITests/Pods-twittegorize-twittegorizeUITests-resources-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-twittegorize/Pods-twittegorize-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-twittegorize-twittegorizeUITests/Pods-twittegorize-twittegorizeUITests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		E9426CC66492217A44D32881 /* [CP] Check Pods Manifest.lock */ = {
@@ -964,7 +927,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		2144C613236965BF00DC2397 /* XCRemoteSwiftPackageReference "url-image" */ = {
+		2144C613236965BF00DC2397 /* RemoteSwiftPackageReference */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/dmytro-anokhin/url-image.git";
 			requirement = {
@@ -975,9 +938,9 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		2144C614236965BF00DC2397 /* URLImage */ = {
+		2144C614236965BF00DC2397 /* SwiftPackageProductDependency */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 2144C613236965BF00DC2397 /* XCRemoteSwiftPackageReference "url-image" */;
+			package = 2144C613236965BF00DC2397 /* RemoteSwiftPackageReference */;
 			productName = URLImage;
 		};
 /* End XCSwiftPackageProductDependency section */

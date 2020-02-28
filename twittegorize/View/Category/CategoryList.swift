@@ -17,7 +17,7 @@ struct CategoryList: View {
         ZStack {
             NavigationView {
                 List {
-                    ForEach (categories.results, id: \.id)  { category in
+                    ForEach (categories.results, id: \.self)  { category in
                         NavigationLink (
                             destination: CategoryDetail(tweets: [Tweet](), categoryTitle: category.title)
                         ) {
@@ -55,7 +55,7 @@ struct CategoryList: View {
         }
     }
     
-    // 該当するdカテゴリーを削除する
+    // 該当するカテゴリーを削除する
     func delete(at offset: IndexSet){
         let categoriesArray = Array(categories.results)
         let index = offset.first!
@@ -65,7 +65,7 @@ struct CategoryList: View {
         try! realm.write {
             realm.delete(results)
         }
-        realm.refresh()
+        
     }
 }
 
