@@ -9,7 +9,7 @@
 import Foundation
 import RealmSwift
 
-class RealmCategory: Object {
+class RealmCategory: Object & Identifiable {
     // uuidをデフォルト値とするユニークなString型のID
     @objc dynamic var id: String = NSUUID().uuidString
     @objc dynamic var title: String = ""
